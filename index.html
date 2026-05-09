@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord</title>
+    <script type="text/javascript">
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();       
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+            setTimeout(startTime, 500);
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+    <style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }
+		pre { background: transparent }
+		pre.western { font-family: "Courier New", monospace; font-size: 10pt }
+		pre.cjk { font-family: "NSimSun", monospace; font-size: 10pt }
+		pre.ctl { font-family: "Courier New", monospace; font-size: 10pt }
+	</style>
+<style type="text/css">
+    a:visited {
+        color: blue;
+    }
+</style>
+<style type="text/css">
+        ol {
+            counter-reset: item;
+        }
+        li {
+            display: block;
+        }
+        li:before {
+            content: counter(item) ". ";
+            counter-increment: item;
+            color: red; /* Cambia il colore qui */
+        }
+    </style>
+    <style>
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+
+</head>
+<body onload="startTime(); mostraDataSeparata()">
+        <div id="txt"></div>
+        <hr>
+        <h1>Accessibilità</h1>
+        <br>
+        <button onclick="readPage()">🗣️ Leggi la pagina</button>
+
+<script>
+function readPage() {
+  const text = document.body.innerText; // raccoglie tutto il testo visibile
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "it-IT"; // imposta lingua italiana
+  speechSynthesis.speak(utterance);
+}
+</script>
+<button onclick="stopReading()">🛑 Interrompi</button>
+<button onclick="toggleTheme()">🌙 Cambia tema</button>
+<hr>
+<script>
+  let utterance;
+
+  function readPage() {
+    const text = document.body.innerText;
+    utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "it-IT";
+    utterance.rate = 1;
+    utterance.pitch = 1;
+    utterance.volume = 1;
+    speechSynthesis.speak(utterance);
+  }
+
+  function stopReading() {
+    speechSynthesis.cancel(); // Ferma immediatamente la lettura
+  }
+</script>
+<script>
+function toggleTheme() {
+  document.body.classList.toggle("dark-mode");
+}
+</script>
+<style>
+.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+</style>
+<h1>Discord</h1>
+<h2> Che cos'è Discord</h2>
+<p>È un'applicazione usata dai gamer Da studenti E per comunicare.</p>
+<a href="https://it.wikipedia.org/wiki/Discord">Approfondimento dalla wikipedia.</a>
+<br>
+<div> È un'APP basata su elettron Che usa tecnologie simili che usa questa pagina che è <a href="https://it.wikipedia.org/wiki/HTML">HTML</a>,<a href="https://it.wikipedia.org/wiki/CSS">CSS</a>,<a href="https://it.wikipedia.org/wiki/JavaScript">JavaScript.</a>
+<p><img src="https://assets.mofoprod.net/network/images/discord.original_O7AzcAH.jpg" alt="Discord" width="250"></p>
+Discord Gira su (<a href="https://it.wikipedia.org/wiki/Microsoft_Windows">Windows</a>,<a href="https://it.wikipedia.org/wiki/Mac_OS_Classic">Mac OS</a>,<a href="https://it.wikipedia.org/wiki/Linux">Linux</a>,<a href="https://it.wikipedia.org/wiki/Android">Android</a>,<a href="https://it.wikipedia.org/wiki/IOS">IOS.</a>)
+</div>
+<div>
+    <p>
+        <b><u>Critiche Sicurezza/Privacy.</u></b>
+    </p>
+    <div>
+        <p>Discord è più una comunità con funzionalità di videochiamata integrate, che un'app di videochiamate stand-alone. Inizialmente un luogo per i giocatori di incontrare, chattare e condividere, Discord è cresciuto fino a oltre 150 milioni di utenti e le sue comunità ora includono tutto, da club di libri, corsi di danza, gruppi di studio, anime, musica e altro ancora. Discord presenta chat di testo e voce e videochiamata. L'app è disponibile su Android e iOS, oltre a un download su Mac, Windows e Linux. Gli utenti possono anche accedere tramite il proprio browser. Discord ha avuto problemi con contenuti tossici che danneggiano i suoi utenti, che vanno dalle molestie, dal traffico di esseri umani e altri crimini online. Quindi, se questo è qualcosa che i tuoi figli stanno usando (probabilmente lo è), è bene tenere d'occhio (Fonte:<a href="https://www.mozillafoundation.org/en/privacynotincluded/about/methodology/">Our methodology | *Privacy Not Included | Mozilla Foundation</a></p>)
+    </div>
+    <div>
+        <details>
+            <summary>Discord Memes</summary>
+            <p>
+                <h1>Discord Meme</h1>
+                <img src="" alt="Meme" width="500">
+            </p>
+        </details>
+    </div>
+    <div>
+        <u>Ultima versione :(1.0.9232 o 311.20)</u>
+    </div>
+</div>
+
+</body>
+</html>
