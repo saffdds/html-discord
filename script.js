@@ -7,19 +7,19 @@ function startTime() {
     s = checkTime(s);
     document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
     setTimeout(startTime, 500);
-  }
+}
 
-  function checkTime(i) {
+function checkTime(i) {
     if (i < 10) {
-      i = "0" + i;
+        i = "0" + i;
     }
     return i;
-  }
-  function mostraDataSeparata() {
-    const oggi = new Date();
-    const opzioni = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const dataFormattata = oggi.toLocaleDateString('it-IT', opzioni);
-    document.getElementById("dataOggi").innerHTML = "📅 Oggi è " + dataFormattata;
+}
+function readPage() {
+    const text = document.body.innerText; // raccoglie tutto il testo visibile
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "it-IT"; // imposta lingua italiana
+    speechSynthesis.speak(utterance);
   }
   let utterance;
 
@@ -34,8 +34,9 @@ function startTime() {
   }
 
   function stopReading() {
-    speechSynthesis.cancel();
+    speechSynthesis.cancel(); // Ferma immediatamente la lettura
   }
   function toggleTheme() {
     document.body.classList.toggle("dark-mode");
   }
+  

@@ -4,29 +4,26 @@ pre { background: transparent }
 pre.western { font-family: "Courier New", monospace; font-size: 10pt }
 pre.cjk { font-family: "NSimSun", monospace; font-size: 10pt }
 pre.ctl { font-family: "Courier New", monospace; font-size: 10pt }
-
 a:visited {
-  color: blue;
+    color: blue;
 }
-
 ol {
-  counter-reset: item;
+    counter-reset: item;
 }
 li {
-  display: block;
+    display: block;
 }
 li:before {
-  content: counter(item) ". ";
-  counter-increment: item;
-  color: red;
+    content: counter(item) ". ";
+    counter-increment: item;
+    color: red; /* Cambia il colore qui */
 }
-
 button {
-  background-color: blue;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 16px;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
 }
 .dark-mode {
     background-color: #121212;
